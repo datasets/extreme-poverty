@@ -2,7 +2,7 @@ How many people live in extreme poverty, and where? This dataset gives the World
 
 This is a frozen snapshot taken on 2026-11-22. It will not change when PIP publishes new releases, which revise past years too.
 
-In 2024, the latest year with survey-based estimates, 824,298,368 people (10.1% of the world) lived on less than $3.00 a day. PIP's nowcast for 2026 is 810,946,777 (9.8%).
+In 2024, the latest year PIP reports regional estimates (2025–26 are nowcasts), 824,298,368 people (10.1% of the world) lived on less than $3.00 a day. PIP's nowcast for 2026 is 810,946,777 (9.8%).
 
 ## What stands out
 
@@ -16,11 +16,11 @@ Extreme poverty has become concentrated in one region. In 1990, 2,300,636,087 pe
 How the numbers are made, and what to watch for:
 
 - **Survey years and lined-up years.** Country poverty rates come from household surveys of income or consumption, which most countries run only every few years. The country table has survey years only. For the world and regional series, PIP "lines up" every country to each year, interpolating between surveys or extrapolating from the nearest one using growth in national accounts, and assumes countries with no survey have their region's average rate.
-- **`estimate_type`.** PIP labels each regional figure `actual`, `projection` or `nowcast`. `nowcast` (2025 and 2026) is model-based, beyond the latest survey data. `projection` marks region-years with thin survey coverage, where the figure rests mostly on extrapolation: for example Sub-Saharan Africa and Europe and Central Asia before 1990, and South Asia from 2015 to 2019 (PIP has no national survey for India between 2011 and 2022). The world figure for 2019 is also labelled `projection`. Treat both labels as less certain.
-- **The 2021 PPP revision and the new lines.** In June 2025 the World Bank moved from 2017 to 2021 PPPs and raised the international poverty line from $2.15 to $3.00 a day, the lower-middle-income line from $3.65 to $4.20 and the upper-middle-income line from $6.85 to $8.30. The World Bank says most of the change in the extreme line reflects higher national poverty lines in the poorest countries, not only prices. The revision raised measured extreme poverty: the World Bank's own estimate for 2022 went from 9.0% (713 million people) to 10.5% (838 million), a change that also includes new survey data. So these figures are not comparable with $2.15 or $1.90 figures in older publications; every year back to 1981 is recalculated here on the new basis.
+- **`estimate_type`.** PIP labels each regional figure `actual`, `projection` or `nowcast`. `nowcast` (2025 and 2026) is model-based, beyond the latest survey data. `projection` marks region-years with thin survey coverage (PIP's API labels region-years that fall below its survey-coverage rule, and are censored on the PIP site, as projection), where the figure rests mostly on extrapolation: for example Sub-Saharan Africa and Europe and Central Asia before 1990, and South Asia from 2015 to 2019 (PIP has no national survey for India between 2011 and 2022). The world figure for 2019 is also labelled `projection`. Treat both labels as less certain.
+- **The 2021 PPP revision and the new lines.** In June 2025 the World Bank moved from 2017 to 2021 PPPs and raised the international poverty line from $2.15 to $3.00 a day, the lower-middle-income line from $3.65 to $4.20 and the upper-middle-income line from $6.85 to $8.30. The World Bank says most of the change in the line from $2.15 to $3.00 is explained by changes in the underlying national poverty lines. The revision raised measured extreme poverty: the World Bank's own estimate for 2022 went from 9.0% (713 million people) to 10.5% (838 million), a change that also includes new survey data. So these figures are not comparable with $2.15 or $1.90 figures in older publications; every year back to 1981 is recalculated here on the new basis.
 - **Breaks within countries.** A change in `survey_comparability` marks a new survey design or welfare measure. India's 2022 and 2023 surveys (HCES) use a new questionnaire and are not comparable with its 2011 survey; much of South Asia's recent fall rests on them.
 - **Income and consumption** measures are not directly comparable: richer countries mostly measure income, poorer ones consumption.
-- Ratios are rounded to 6 decimal places and dollar amounts to 4; counts are as published.
+- Ratios are rounded to 6 decimal places and dollar amounts to 4; counts are as published, except that PIP's survey populations are fractional and are rounded to whole people in the CSV.
 
 ## Source and licence
 

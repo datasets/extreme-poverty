@@ -31,5 +31,5 @@ The awk field split is safe for these rows (WLD and SSF names have no commas); t
 
 ## Things to check
 
-- `estimate_type` definitions (`projection`) are my reading of PIP's coverage rules, not a definition quoted from PIP; the API dictionary only says "Whether reported estimate is actual, projection, or nowcast".
+- PIP's API source (`pipapi`, R/utils-censor.R, `estimate_type_var`) labels censored region-years (no adequate survey coverage) as `projection` and years after the lineup year as `nowcast`.
 - Licence: CC BY 4.0 per the World Bank Data Catalog page for the PIP dataset (quoted in archive/PROVENANCE.md).
