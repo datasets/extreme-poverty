@@ -1,0 +1,119 @@
+{
+  "name": "extreme-poverty",
+  "title": "Extreme Poverty: People Living on Less Than $3 a Day (World Bank PIP)",
+  "description": "Global, regional and country poverty estimates from the World Bank Poverty and Inequality Platform (PIP), September 2026 release, in 2021 purchasing power parity (PPP) dollars. Share and number of people living below the international (extreme) poverty line of $3.00 a day, and below the higher $4.20 and $8.30 lines, for the world and its regions every year from 1981 to 2026 (2025 and 2026 are nowcasts), plus country estimates for every household survey year. A frozen snapshot taken on 2026-11-22.",
+  "status": "structured",
+  "homepage": "https://pip.worldbank.org",
+  "version": "20260922_2021_01_02_PROD",
+  "keywords": ["poverty", "extreme poverty", "international poverty line", "inequality", "World Bank", "PIP", "PPP", "development", "Sub-Saharan Africa"],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International. World Bank Data Catalog: the Poverty and Equity Database (Poverty and Inequality Platform) is licensed under Creative Commons Attribution 4.0; CC-BY 4.0 is the default licence for datasets produced by the World Bank.",
+      "path": "https://datacatalog.worldbank.org/public-licenses"
+    }
+  ],
+  "sources": [
+    {
+      "title": "World Bank, Poverty and Inequality Platform (PIP), version 20260922_2021_01_02_PROD (September 2026 update, 2021 PPPs)",
+      "path": "https://pip.worldbank.org"
+    },
+    {
+      "title": "PIP API v1 (pip-grp, pip and aux endpoints)",
+      "path": "https://api.worldbank.org/pip/v1"
+    },
+    {
+      "title": "World Bank Data Catalog: Poverty and Equity Database (Poverty and Inequality Platform)",
+      "path": "https://datacatalog.worldbank.org/search/dataset/0038020/poverty-and-equity-database-poverty-and-inequality-platform"
+    }
+  ],
+  "upkeep": {
+    "mode": "frozen",
+    "snapshot": "2026-11-22"
+  },
+  "resources": [
+    {
+      "name": "aggregates",
+      "path": "data/aggregates.csv",
+      "title": "World and regional poverty by year and poverty line, 1981 to 2026",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "region_code", "type": "string", "description": "World Bank code: WLD (world), the seven World Bank regions (EAS, ECS, LCN, MEA, NAC, SAS, SSF), and AFE and AFW, the eastern-southern and western-central halves of Sub-Saharan Africa." },
+          { "name": "region_name", "type": "string", "description": "Region name as given by PIP." },
+          { "name": "region_type", "type": "string", "description": "world, region or subregion. The seven regions add up to the world; AFE and AFW split SSF, so do not add them to the regions.", "constraints": { "enum": ["world", "region", "subregion"] } },
+          { "name": "year", "type": "year", "description": "Reference year of the estimate." },
+          { "name": "poverty_line", "type": "number", "description": "Poverty line in 2021 PPP dollars per person per day: 3 (international or extreme poverty line), 4.2 (lower-middle-income line) or 8.3 (upper-middle-income line)." },
+          { "name": "headcount_ratio", "type": "number", "description": "Share of the population (0 to 1) living in households whose income or consumption per person is below the poverty line." },
+          { "name": "pop_in_poverty", "type": "integer", "description": "Number of people below the poverty line." },
+          { "name": "population", "type": "integer", "description": "Population of the region in that year." },
+          { "name": "poverty_gap", "type": "number", "description": "Poverty gap index (0 to 1): average shortfall below the line, as a share of the line, counting the non-poor as zero." },
+          { "name": "mean", "type": "number", "description": "Mean daily income or consumption per person, 2021 PPP dollars." },
+          { "name": "estimate_type", "type": "string", "description": "PIP's label: actual (lined-up estimate with enough survey coverage), projection (survey coverage of the region is thin around that year, so the figure rests mostly on extrapolation) or nowcast (2025 and 2026, model-based beyond the latest survey data).", "constraints": { "enum": ["actual", "projection", "nowcast"] } }
+        ],
+        "primaryKey": ["region_code", "year", "poverty_line"]
+      }
+    },
+    {
+      "name": "country-surveys",
+      "path": "data/country-surveys.csv",
+      "title": "Country poverty in each household survey year, by poverty line",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "country_code", "type": "string", "description": "ISO 3166-1 alpha-3 code (XKX for Kosovo)." },
+          { "name": "country_name", "type": "string", "description": "Country or economy name as given by PIP." },
+          { "name": "region_code", "type": "string", "description": "World Bank region code (see aggregates)." },
+          { "name": "year", "type": "year", "description": "Reporting year of the survey estimate." },
+          { "name": "survey_year", "type": "number", "description": "Survey year with decimals giving the mid-point of fieldwork when it spans two calendar years (e.g. 2022.58)." },
+          { "name": "reporting_level", "type": "string", "description": "national, urban or rural. Some countries report urban and rural separately (and some surveys cover only urban areas).", "constraints": { "enum": ["national", "urban", "rural"] } },
+          { "name": "welfare_type", "type": "string", "description": "consumption or income. Income-based and consumption-based poverty rates are not directly comparable.", "constraints": { "enum": ["consumption", "income"] } },
+          { "name": "poverty_line", "type": "number", "description": "Poverty line in 2021 PPP dollars per person per day: 3, 4.2 or 8.3." },
+          { "name": "headcount_ratio", "type": "number", "description": "Share of the population (0 to 1) below the poverty line." },
+          { "name": "poverty_gap", "type": "number", "description": "Poverty gap index (0 to 1)." },
+          { "name": "mean", "type": "number", "description": "Mean daily income or consumption per person from the survey, 2021 PPP dollars." },
+          { "name": "median", "type": "number", "description": "Median daily income or consumption per person from the survey, 2021 PPP dollars." },
+          { "name": "gini", "type": "number", "description": "Gini index of the welfare distribution (0 to 1). Does not depend on the poverty line." },
+          { "name": "population", "type": "integer", "description": "Population covered by the reporting level in the reporting year." },
+          { "name": "survey_acronym", "type": "string", "description": "Acronym of the household survey." },
+          { "name": "survey_coverage", "type": "string", "description": "Geographic coverage of the survey (national, urban or rural)." },
+          { "name": "distribution_type", "type": "string", "description": "Data PIP used: micro (unit-record data), group (grouped data), imputed or synthetic." },
+          { "name": "survey_comparability", "type": "integer", "description": "Comparability code within a country: estimates with the same code are comparable over time; a change marks a break (new survey design, questionnaire or welfare measure)." }
+        ],
+        "primaryKey": ["country_code", "year", "reporting_level", "welfare_type", "poverty_line"]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "poor-by-region-chart",
+      "title": "People living on less than $3 a day by region, 1981 to 2026 (2021 PPP)",
+      "resources": ["aggregates"],
+      "specType": "vega-lite",
+      "spec": {
+        "width": "container",
+        "height": 340,
+        "transform": [
+          { "filter": "datum.poverty_line == 3 && datum.region_type == 'region'" }
+        ],
+        "mark": { "type": "area" },
+        "encoding": {
+          "x": { "field": "year", "type": "quantitative", "axis": { "format": "d", "title": "Year" } },
+          "y": { "field": "pop_in_poverty", "type": "quantitative", "stack": "zero", "axis": { "title": "People below $3 a day", "format": "~s" } },
+          "color": { "field": "region_name", "type": "nominal", "title": "Region" },
+          "tooltip": [
+            { "field": "region_name", "type": "nominal" },
+            { "field": "year", "type": "quantitative", "format": "d" },
+            { "field": "pop_in_poverty", "type": "quantitative", "format": "," },
+            { "field": "headcount_ratio", "type": "quantitative", "format": ".1%" },
+            { "field": "estimate_type", "type": "nominal" }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "retrieved": "2026-11-22",
+  "version": "20260922_2021_01_02_PROD",
+  "files": [
+    {
+      "name": "pip-grp-wb-3.00.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip-grp?country=ALL&year=all&povline=3.00&group_by=wb&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 90795,
+      "sha256": "edcc8dc88cc93ebf3a078940d4f64a12183231488cba6d64eb5243c5c0736f6c"
+    },
+    {
+      "name": "pip-surveys-3.00.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip?country=ALL&year=all&povline=3.00&fill_gaps=false&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 1305619,
+      "sha256": "d1147750f873731ebc157595337758de6941c102d27a3c541b9209256c0e4339"
+    },
+    {
+      "name": "pip-grp-wb-4.20.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip-grp?country=ALL&year=all&povline=4.20&group_by=wb&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 91340,
+      "sha256": "837f9227c43fab57d88116b3afb3af7188cb7eff6b6fe5988be388f2a0f84707"
+    },
+    {
+      "name": "pip-surveys-4.20.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip?country=ALL&year=all&povline=4.20&fill_gaps=false&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 1315011,
+      "sha256": "fbb9f1c7cff51cffab131e63bb2fe682ab4c5321a526db72916df9021a90d2f6"
+    },
+    {
+      "name": "pip-grp-wb-8.30.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip-grp?country=ALL&year=all&povline=8.30&group_by=wb&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 90756,
+      "sha256": "de92d7eb64cb651b5e4a7e8c24653562852f22bb1a34290ee6823f1f73bc06f3"
+    },
+    {
+      "name": "pip-surveys-8.30.csv",
+      "url": "https://api.worldbank.org/pip/v1/pip?country=ALL&year=all&povline=8.30&fill_gaps=false&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 1317704,
+      "sha256": "28390480af2fbd4fea2a7b5e678c9878103c3d92696d6b7a1240588d35a73701"
+    },
+    {
+      "name": "aux-poverty_lines.csv",
+      "url": "https://api.worldbank.org/pip/v1/aux?table=poverty_lines&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 4483,
+      "sha256": "dff15b810a19044d3b382bf074d01dde58bfd3da229605314eee24dee602482c"
+    },
+    {
+      "name": "aux-regions.csv",
+      "url": "https://api.worldbank.org/pip/v1/aux?table=regions&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 853,
+      "sha256": "1884f4686aa1c3ee59b63247df3a81cf0540c1af05d89b6fc837b0abe5c0a149"
+    },
+    {
+      "name": "aux-dictionary.csv",
+      "url": "https://api.worldbank.org/pip/v1/aux?table=dictionary&version=20260922_2021_01_02_PROD&format=csv",
+      "bytes": 7697,
+      "sha256": "7b1ad9972b842cc9fdd4919cfe5a25828f68a545622eaf56940eb374f7a3c67b"
+    }
+  ]
+}

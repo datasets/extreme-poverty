@@ -1,0 +1,28 @@
+region_code,region,grouping_type
+AFE,Eastern and Southern Africa,africa_split
+AFW,Western and Central Africa,africa_split
+FCVN,Not-fragile,fcv
+FCVY,Fragile,fcv
+BLND,Blend,ida
+IBRD,IBRD,ida
+IDA,IDA,ida
+REST,Rest of the world,ida
+HIC,High income,incgroup
+LIC,Low income,incgroup
+LMIC,Lower middle income,incgroup
+UMIC,Upper middle income,incgroup
+EAS,East Asia & Pacific,region
+ECS,Europe & Central Asia,region
+LCN,Latin America & Caribbean,region
+MEA,"Middle East, North Africa, Afghanistan & Pakistan",region
+NAC,North America,region
+SAS,South Asia,region
+SSF,Sub-Saharan Africa,region
+EAP,East Asia & Pacific,regionpcn
+ECA,Europe & Central Asia,regionpcn
+LAC,Latin America & Caribbean,regionpcn
+MNA,Middle East & North Africa,regionpcn
+OHI,Other High Income Countries,regionpcn
+SAR,South Asia,regionpcn
+SSA,Sub-Saharan Africa,regionpcn
+WLD,World,world
